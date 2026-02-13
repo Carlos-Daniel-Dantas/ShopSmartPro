@@ -4,6 +4,7 @@ function calcularTotal(){
     const verifica02 = document.getElementById('valor02').value;
 
     
+
     if (isNaN(verifica01) || isNaN(verifica02)) {
         alert("Preencha todos os campos")
         
@@ -45,7 +46,7 @@ function juros(){
 
             <li>Preço total: <span> ${v1} </span> </li>
             <li>Seu desconto: <span>${v2}</span> </li>       
-            <li>Com o desconto da compra o valor é:  = <span>${(v1 * v2) / 100}</</span> </li>
+            <li>Valor final com juros:  = <span>${((v1 * v2) / 100) + v1}</</span> </li>
         </ul>
         `
     }
@@ -97,9 +98,9 @@ function comissao(){
         `
         <ul>
 
-            <li>Valor 01: <span> ${v1} </span> </li>
+            <li>Comissão calculada: <span> ${v1} </span> </li>
             <li>Valor 02: <span>${v2}</span> </li>       
-            <li>Sua comissão é de:  = <span>${v1 / v2}</</span> </li>
+            <li>Valor da comissão:  = <span>${v1 / v2}</</span> </li>
         </ul>
         `
     }

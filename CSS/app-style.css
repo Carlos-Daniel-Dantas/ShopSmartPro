@@ -1,0 +1,113 @@
+*{
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+h1 {
+    color: rgb(0, 0, 0);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24;
+    display: flex;
+    justify-content: center;
+    padding: 20px ;
+
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.buttons{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3);
+
+}
+
+.inputs{
+
+    display: flex;
+    justify-content: center;
+
+
+}
+
+button{
+    background-color: rgb(81, 72, 199);
+    cursor: pointer;
+    border: none;
+    padding: 25px ;
+    gap: 20px;
+    border-radius: 15px;
+    margin: 10px;
+    color: azure;
+
+}
+
+input{
+    display: flex;
+    padding: 10px;
+    border: none;
+    margin: 20px;
+    border-radius: 20px;
+    width: 360px;
+
+
+}
+
+.card{
+    background-color: rgb(30, 36, 126);
+    border-radius: 20px;
+    width: 190vh;
+    height: auto;
+    padding: 20px;
+
+
+
+    
+}
+
+.btn-clear{
+    color: rgb(255, 255, 255);
+    background-color: brown;
+}
+
+label{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    display: flex;
+    
+
+
+}
+
+.resultado{
+    background-color: rgb(15, 20, 87);
+    border-radius: 20px;
+    width: 91%;
+    height: 260px;
+    padding: 20px;
+    margin: 20px;
+    display: flex;
+    align-items: center;
+
+
+    
+}
+
+ul{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    list-style: none;
+    padding: 20px;
+
+    
+}
