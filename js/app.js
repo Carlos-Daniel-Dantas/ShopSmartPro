@@ -1,81 +1,110 @@
-const verifica01 = document.getElementById('valor01').value;
-const verifica02 = document.getElementById('valor02').value;
 
+const input01 = document.getElementById('valor01')
+const input02 = document.getElementById('valor02')
+const resultado = document.getElementById('resultado')
+
+//  terminado
 function calcularTotal(){
 
-    const v1 = parseFloat(verifica01.value)
-    const v2 = parseFloat(verifica02.value)
+    const v1 = parseFloat(input01.value)
+    const v2 = parseFloat(input02.value)
 
     if (isNaN(v1) || isNaN(v2)) {
-        resultado.innerHTML = `<P>Preencha todos os campo corretamente</P>`
-        
-    }else {
-        let v1 = parseFloat(document.getElementById('valor01').value);
-        let v2 = parseFloat(document.getElementById('valor02').value);
-        document.getElementById('resultado').style.display = 'flex';
-        const resultado = document.getElementById('resultado');
-        resultado.innerHTML =
-        `
-        <ul>
 
-            <li>Total da Compra</li>   
-            <li> Você está adquirindo <span>${v1}</span> unidade(s) com valor unitario de R$ <span> ${ v1.toFixed(2) } </span> </li>
-            <li>O Valor total da compra: R$  = <span> ${v1 * v2} </span> </li>
-        </ul>
+        resultado.style.display = 'flex'
+
+        resultado.innerHTML = `
+        <h2>Erro na validação<h2>
+
+        <p>Por favor, preencha todos os campos com apenas números</p>
         `
-    }
+    }else {
+
+        total = v1 * v2
+
+        resultado.style.display = 'flex'
+
+        resultado.innerHTML = `
+        <h2>Total da Compra<h2>
+            <ul>
+                <li>Você está adquirindo ${v2} unidade(s) com valor unitário de R$ ${v1.toFixed(2)}.</li>
+                <li>Valor total da compra: R$ ${total.toFixed(2)}</li>
+            </ul>
+        `;
+    };
 
 };
 
+//  terminado
 function juros(){
 
-    const v1 = parseFloat(verifica01.value)
-    const v2 = parseFloat(verifica02.value)
-    
+
+    const v1 = parseFloat(input01.value)
+    const v2 = parseFloat(input02.value)
+
     if (isNaN(v1) || isNaN(v2)) {
-        resultado.innerHTML = `<P>Preencha todos os campo corretamente</P>`
+
+        resultado.style.display = 'flex'
+
+        resultado.innerHTML = `
+        <h2>Erro na validação<h2>
+
+        <p>Por favor, preencha todos os campos com apenas números</p>
+        `
+
         
     }else {
-        let v1 = parseFloat(document.getElementById('valor01').value);
-        let v2 = parseFloat(document.getElementById('valor02').value);
-        document.getElementById('resultado').style.display = 'flex';
-        const resultado = document.getElementById('resultado');
-        resultado.innerHTML =
-        `
+
+        juros_total = v1 + v2
+
+        resultado.style.display = 'flex'
+
+        resultado.innerHTML = `
+
         <ul>
             <li>Total da Compra</li>   
             <li> F oi aplicado um acréscimo de <span> ${v1} </span>% sobre o valor de R$<span> ${v2.toFixed(2)} </span></li>      
-            <li>Valor final com juros: R$ = <span> ${((v1 * v2) / 100) + v1}</</span> </li>
+            <li>Valor final com juros: R$  <span> ${juros_total.toFixed(2)}</</span> </li>
         </ul>
         `
     }
 
 };
 
+// terminado
 function desconto(){
 
-    const v1 = parseFloat(verifica01.value)
-    const v2 = parseFloat(verifica02.value)
-
+    const v1 = parseFloat(input01.value)
+    const v2 = parseFloat(input02.value)
 
     if (isNaN(v1) || isNaN(v2)) {
-        resultado.innerHTML = `<P>Preencha todos os campo corretamente</P>`
-    
 
-        
+        resultado.style.display = 'flex'
+
+        resultado.innerHTML = `
+        <h2>Erro na validação<h2>
+
+        <p>Por favor, preencha todos os campos com apenas números</p>
+        `
+
+    
     }else {
 
-        document.getElementById('resultado').style.display = 'flex';
-        const resultado = document.getElementById('resultado');
-        resultado.innerHTML =
-        `
+        descontov = (v2 / 100) * v1
+
+        descontov2 = v1 - descontov
+
+        resultado.style.display = 'flex'
+
+        resultado.innerHTML = `
+
         <ul>
 
             <li>Total da Compra</li>   
 
             <li>Foi aplicado um desconto de <span> ${v1} </span>% sobre o valor de R$ <span> ${v2.toFixed(2)} </span></li>
 
-            <li>Valor final com desconto: R$ = <span> ${(v1 * v2) / 100 } </</span> </li>
+            <li>Valor final com desconto: R$  <span> ${descontov2.toFixed(2)} </</span> </li>
         </ul>
         `
     }
@@ -84,19 +113,23 @@ function desconto(){
 
 function comissao(){
 
-    const v1 = parseFloat(verifica01.value)
-    const v2 = parseFloat(verifica02.value)
+    const v1 = parseFloat(input01.value)
+    const v2 = parseFloat(input02.value)
 
     if (isNaN(v1) || isNaN(v2)) {
-        resultado.innerHTML = `<P>Preencha todos os campo corretamente</P>`
-        
-    }else {
-        let v1 = parseFloat(document.getElementById('valor01').value);
-        let v2 = parseFloat(document.getElementById('valor02').value);
-        document.getElementById('resultado').style.display = 'flex';
-        const resultado = document.getElementById('resultado');
-        resultado.innerHTML =
+
+        resultado.style.display = 'flex'
+
+        resultado.innerHTML = `
+        <h2>Erro na validação<h2>
+
+        <p>Por favor, preencha todos os campos com apenas números</p>
         `
+
+    }else {
+
+        resultado.style.display = 'flex'
+        resultado.innerHTML = `
         <ul>
 
             <li>Total da Compra</li>   
@@ -111,19 +144,25 @@ function comissao(){
 
 function lucro(){
 
-    const v1 = parseFloat(verifica01.value)
-    const v2 = parseFloat(verifica02.value)
-    
+    const v1 = parseFloat(input01.value)
+    const v2 = parseFloat(input02.value)
+
     if (isNaN(v1) || isNaN(v2)) {
-        resultado.innerHTML = `<P>Preencha todos os campo corretamente</P>`
-        
-    }else {
-        let v1 = parseFloat(document.getElementById('valor01').value);
-        let v2 = parseFloat(document.getElementById('valor02').value);
-        document.getElementById('resultado').style.display = 'flex';
-        const resultado = document.getElementById('resultado');
-        resultado.innerHTML =
+
+        resultado.style.display = 'flex'
+
+        resultado.innerHTML = `
+        <h2>Erro na validação<h2>
+
+        <p>Por favor, preencha todos os campos com apenas números</p>
         `
+
+    }else {
+
+        resultado.style.display = 'flex'
+
+        resultado.innerHTML = `
+
         <ul>
 
             <li>Lucro Obtido </li>
